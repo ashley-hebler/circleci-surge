@@ -4,9 +4,7 @@
   "description": "tutorial for circle ci",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test.\"",
-    "fake": "echo \"I ran a fake thing.\"",
-    "deploy": "surge --project ./ --domain inconclusive-transport.surge.sh"
+    "test": "echo \"Test placeholder\"",
   },
   "repository": {
     "type": "git",
@@ -19,9 +17,6 @@
   },
   "homepage": "https://github.com/ashley-hebler/circleci-101#readme",
   "devDependencies": {
-    "surge": "^0.20.1"
-  },
-  "dependencies": {
     "surge": "^0.20.1"
   }
 }
