@@ -4,7 +4,7 @@
   "description": "tutorial for circle ci",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Test placeholder\"",
+    "test": "echo \"Test placeholder\""
   },
   "repository": {
     "type": "git",
