@@ -1,0 +1,22 @@
+{
+  "name": "circleci-101",
+  "version": "1.0.0",
+  "description": "tutorial for circle ci",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test.\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashley-hebler/circleci-101.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashley-hebler/circleci-101/issues"
+  },
+  "homepage": "https://github.com/ashley-hebler/circleci-101#readme",
+  "devDependencies": {
+    "surge": "^0.20.1"
+  }
+}
