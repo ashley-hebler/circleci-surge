@@ -34,6 +34,7 @@ jobs:
         enabled: true
     steps:
       - checkout
+      - run: yarn install
       - run:
           name: Deploy to surge
           command: surge --project ./ --domain inconclusive-transport.surge.sh
