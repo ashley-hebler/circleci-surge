@@ -30,13 +30,12 @@ jobs:
       # run tests!
       - run: yarn test
   deploy:
-    machine:
-        enabled: true
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
     steps:
       - checkout
-      - run:
-          name: Deploy to surge
-          command: surge --project ./ --domain inconclusive-transport.surge.sh
+      - run: yarn deploy
   fake:
     docker:
       # specify the version you desire here
@@ -49,6 +48,6 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      - fake:
+      - deploy:
           requires:
               - build
