@@ -16,33 +16,38 @@ jobs:
     steps:
       - checkout
       # Download and cache dependencies
-      # - restore_cache:
-      #     keys:
-      #     - v1-dependencies-{{ checksum "package.json" }}
-      #     # fallback to using the latest cache if no exact match is found
-      #     - v1-dependencies-
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
 
       - run: yarn install
-      # - save_cache:
-      #     paths:
-      #       - node_modules
-      #     key: v1-dependencies-{{ checksum "package.json" }}
-      # run tests!
-      - run: surge --project ./ --domain inconclusive-transport.surge.sh
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      run tests!
+      - run: yarn test
   deploy:
     machine:
         enabled: true
     steps:
       - checkout
-      - run: yarn install
       - run:
           name: Deploy to surge
           command: surge --project ./ --domain inconclusive-transport.surge.sh
+  fake:
+    machine:
+        enabled: true
+    steps:
+      - checkout
+      - run: yarn fake
 workflows:
   version: 2
   build-and-deploy:
     jobs:
       - build
-      - deploy:
+      - fake:
           requires:
               - build
