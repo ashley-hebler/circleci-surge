@@ -35,7 +35,8 @@ jobs:
       - image: circleci/node:7.10
     steps:
       - checkout
-      - run: yarn deploy
+      - run: npm install surge
+      - run: surge --project ./ --domain inconclusive-transport.surge.sh
   fake:
     docker:
       # specify the version you desire here
