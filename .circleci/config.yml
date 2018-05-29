@@ -27,7 +27,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      run tests!
+      # run tests!
       - run: yarn test
   deploy:
     machine:
@@ -38,8 +38,6 @@ jobs:
           name: Deploy to surge
           command: surge --project ./ --domain inconclusive-transport.surge.sh
   fake:
-    machine:
-        enabled: true
     steps:
       - checkout
       - run: yarn fake
