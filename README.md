@@ -56,4 +56,4 @@ In the CircleCi admin screen of your project, go to Settings > Build Settings > 
 |Name|Value|
 |---|---|
 |SURGE_LOGIN|YourSurgeEmailAccount@gmail.com|
-|SURGE_TOKEN|Use `surge token` to generate|
+|SURGE_TOKEN|Use `surge token` locally with surge cli to generate|

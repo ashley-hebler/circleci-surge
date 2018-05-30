@@ -27,7 +27,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      # run tests!
+      # run placeholder test
       - run: yarn test
   deploy:
     docker:
@@ -35,7 +35,7 @@ jobs:
     steps:
       - checkout
       - run: npm install surge
-      - run: ./node_modules/surge/lib/cli.js --project ./ --domain inconclusive-transport.surge.sh
+      - run: ./node_modules/surge/lib/cli.js --project ./ --domain $CIRCLE_BRANCH.inconclusive-transport.surge.sh
 workflows:
   version: 2
   build-and-deploy:
