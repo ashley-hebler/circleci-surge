@@ -27,8 +27,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      # run tests!
-      - run: echo $CIRCLE_BRANCH
+      # run placeholder test
+      - run: yarn test
   deploy:
     docker:
       - image: circleci/node:7.10
