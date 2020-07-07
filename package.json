@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/ashley-hebler/circleci-101#readme",
   "devDependencies": {
-    "surge": "^0.20.1"
+    "surge": "^0.21.5"
   }
 }
